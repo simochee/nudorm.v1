@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>デジタル版 白鳥寮献立表</title>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="デジタル版 白鳥寮献立表">
+	<meta name="twitter:description" content="宇部高専 学生寮 白鳥寮の献立の確認やメニューの検索ができます。また、次の献立をここからすぐに見ることができます。">
+	<meta name="twitter:image" content="http://uswan2.web.fc2.com/twitter/index.png">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<header class="global-header">
+			<h1>デジタル版&ensp;白鳥寮献立表</h1>
+		</header>
+
+		<main>
+
+			<div class="next-menu">
+				<div class="time" id="nextTime"><span class="small">の献立</span></div>
+				<ol class="menu-list" id="nextMenuList"></ol>
+			</div>
+
+			<a href="#today" class="btn">
+				<span class="icon">
+					<span class="ion-fork"></span>
+					<span class="ion-knife"></span>
+				</span>
+				今日の献立
+			</a>
+			<button class="btn openPopup" data-target="#search">
+				<span class="ion-ios-search-strong icon"></span>
+				検索
+			</button>
+			<h2></h2>
+			<ol class="menu-archives" id="menuArchives"></ol>
+			<button class="btn scrollTop" id="footerScrollTop">
+				<span class="ion-arrow-up-a icon"></span>
+				ページトップへ
+			</button>
+			<button class="btn trigger">
+				<span class="ion-ios-calendar-outline icon"></span>
+				過去の献立
+			</button>
+			<div class="toggle">
+				.
+			</div>
+			<a href="https://www.ube-k.ac.jp/hakucho-domitory/" class="btn" target="_blank">
+				<span class="ion-home icon"></span>
+				宇部高専 白鳥寮
+			</a>
+		</main>
+
+		<footer class="global-footer">
+			<p>このサイトは非公認で勝手に運営しています</p>
+		</footer>
+
+		<button class="scroll-top scrollTop" id="scrollTop">
+			<span class="ion-ios-arrow-thin-up icon"></span>
+		</button>
+
+	</div>
+
+	<div class="search-wrapper popup" id="search">
+		<div class="serach-area">
+			<form action="/search" method="GET">
+				<div class="input-area">
+					<input type="text" name="wd" class="search-word" placeholder="検索ワード">
+					<button type="submit" class="search-submit"><span class="ion-ios-search-strong"></span></button>
+				</div>
+			</form>
+			<button type="button" class="close closePopup"><span class="ion-ios-close-outline"></span></button>
+		</div>
+	</div>
+
+	<div class="popup-wrapper popup" id="menuPopup">
+		<div class="popup-menu" id="popupContent"></div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/menulist.js"></script>
+</body>
+</html>
